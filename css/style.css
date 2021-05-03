@@ -15,8 +15,120 @@ html, * {
 	--primary-red: #7b113a;
 	--primary-dark-blue: #150e56;
 	--secondary-blue: #1597bb;
-	--secondary-light-blue: #1597bb;
+	--secondary-light-blue: #8fd6e1;
 	--accent: #e41f6a;
 }
 
 /* --- */
+
+.container {
+	background-color: var(--secondary-blue);
+	width: 100vw;
+	height: 100vh;
+}
+
+.container p {
+	margin-left: 1rem;
+	margin-top: 1rem;
+
+}
+
+.header {
+	background-color: var(--primary-dark-blue);
+	color: white;
+	font-size: 2rem;
+	height: 10rem;
+	padding: 1rem;
+}
+
+
+.visualcontainer {
+	height: 20rem;
+	font-size: 1.2rem;
+}
+
+.white,
+.dblue,
+.purple,
+.lblue,
+.blue {
+	height: 8rem;
+	width: 100%;
+	border-radius: 1rem 1rem 0 0;
+
+	position: absolute;
+}
+
+.white {
+	background-color: white;
+	bottom: 31rem;
+}
+
+.dblue {
+	background-color: var(--primary-dark-blue);
+	color: white;
+	bottom: 28rem;
+}
+
+.purple {
+	background-color: var(--primary-red);
+	color: white;
+	bottom: 24rem;
+}
+
+.lblue {
+	background-color: var(--secondary-light-blue);
+	color: white;
+	bottom: 20rem;
+}
+
+.blue {
+	background-color: var(--secondary-blue);
+	color: white;
+	bottom: 16rem;
+}
+
+
+.homepagebuttoncontainer {
+	display: flex;
+	justify-content: center;
+}
+
+.button1 {
+	background-color: white;
+	font-weight: bold;
+	color: var(--primary-dark-blue);
+
+	padding: 0.5rem 10rem 0.5rem 2rem;
+	border-radius: 8px;
+	border: 2px solid var(--primary-dark-blue);
+	box-shadow: 4px 4px 0 lightgrey;
+
+	position: relative;
+
+	transition: 0.2s;
+}
+
+.button1::after {
+	content: "";
+
+	width: 0.5rem;
+	height: 0.5rem;
+	display: inline-block;
+	position: absolute;
+
+	top: 38%;
+	right: 5%;
+
+	border-bottom: 3.5px solid black;
+	border-right: 3.5px solid black;
+	border-radius: 2px;
+	transform: rotate(-45deg);
+}
+
+.button1:hover {
+	background-color: lightgray;
+	box-shadow: 0px 0px transparent;
+	margin-top: 4px;
+	margin-left: 4px;
+}
