@@ -118,7 +118,7 @@ body {
 }
 
 .homepagebuttonAnim {
-	animation: homepagebuttonAnim 0.5s forwards;
+	animation: homepagebuttonAnim 0.5s forwards ease-in-out;
 }
 
 @keyframes homepagebuttonAnim {
@@ -176,15 +176,25 @@ body {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
+	background-color: var(--primary-dark-blue);
+	overflow: hidden;
 }
 
 .content {
 	background-color: white;
-	height: 50%;
-	border-radius: 1rem;
+	height: 100%;
+	border-radius: 1rem 1rem 0 0;
 
 	padding: 1rem;
-	margin-top: -3rem;
+	/* margin-top: -1rem; */
+	animation: contentLoad 0.7s forwards ease-in-out;
+}
+
+@keyframes contentLoad {
+	0% {margin-top: 40rem;}
+	70% {margin-top: 0rem;}
+	85% {margin-top: 0.8rem;}
+	100% {margin-top: 0rem;}
 }
 
 .content > h2 {
@@ -231,13 +241,21 @@ body {
 .addNew {
 	position: fixed;
 	align-self: center;
-	bottom: 0;
+	bottom: -80px;
 	padding: 1.5rem;
 	width: 90%;
 	margin-bottom: 1rem;
 
 	border-radius: 12px;
 	border: 2px solid var(--primary-dark-blue);
+
+	animation: addNewLoad 0.8s forwards ease-in-out;
+	animation-delay: 0.8s;
+}
+
+@keyframes addNewLoad {
+	from {bottom: -80px;}
+	to {bottom: 0;}
 }
 
 .icon_add {
