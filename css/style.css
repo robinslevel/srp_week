@@ -2,4 +2,21 @@ html, * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
 }
+
+/* color variables */
+
+/* om een kleur variable te selecteren doe je:
+	color: var(--primary-red);
+ */
+
+:root {
+	--primary-red: #7b113a;
+	--primary-dark-blue: #150e56;
+	--secondary-blue: #1597bb;
+	--secondary-light-blue: #1597bb;
+	--accent: #e41f6a;
+}
+
+/* --- */
