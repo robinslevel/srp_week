@@ -5,6 +5,10 @@ html, * {
 	font-family: 'Open Sans', sans-serif;
 }
 
+body {
+	overflow: hidden;
+}
+
 /* color variables */
 
 /* om een kleur variable te selecteren doe je:
@@ -24,9 +28,10 @@ html, * {
 /* homescreen */
 
 .container {
-	background-color: var(--secondary-blue);
+	background-color: var(--primary-dark-blue);
 	width: 100vw;
 	height: 100vh;
+	overflow: hidden;
 }
 
 .container p {
@@ -54,7 +59,7 @@ html, * {
 .purple,
 .lblue,
 .blue {
-	height: 8rem;
+	height: 23rem;
 	width: 100%;
 	border-radius: 1rem 1rem 0 0;
 
@@ -63,31 +68,44 @@ html, * {
 
 .white {
 	background-color: white;
-	bottom: 31rem;
+	bottom: 15rem;
+	animation-delay: 1.6s !important;
 }
 
 .dblue {
 	background-color: var(--primary-dark-blue);
 	color: white;
-	bottom: 28rem;
+	bottom: 12rem;
+	animation-delay: 1.4s !important;
 }
 
 .purple {
 	background-color: var(--primary-red);
 	color: white;
-	bottom: 24rem;
+	bottom: 8rem;
+	animation-delay: 1.2s !important;
 }
 
 .lblue {
 	background-color: var(--secondary-light-blue);
 	color: white;
-	bottom: 20rem;
+	bottom: 4rem;
+	animation-delay: 1s !important;
 }
 
 .blue {
 	background-color: var(--secondary-blue);
 	color: white;
-	bottom: 16rem;
+	bottom: 0rem;
+	animation-delay: 0.8s !important;
+}
+
+.homepageAnim {
+	animation: homepageAnim 1s forwards;
+}
+
+@keyframes homepageAnim {
+	to{bottom: -100%;}
 }
 
 /* start button */
@@ -95,6 +113,19 @@ html, * {
 .homepagebuttoncontainer {
 	display: flex;
 	justify-content: center;
+	animation-delay: 0.2s !important;
+	text-decoration: none;
+}
+
+.homepagebuttonAnim {
+	animation: homepagebuttonAnim 0.5s forwards;
+}
+
+@keyframes homepagebuttonAnim {
+	0% {margin-left: 0rem;}
+	30% {margin-left: -2rem;}
+	50% {margin-left: -2rem;}
+	100% {margin-left: 50rem;}
 }
 
 .button1 {
@@ -102,29 +133,30 @@ html, * {
 	font-weight: bold;
 	color: var(--primary-dark-blue);
 
-	padding: 0.5rem 10rem 0.5rem 2rem;
+	padding: 2rem 15rem 2rem 2rem;
 	border-radius: 8px;
 	border: 2px solid var(--primary-dark-blue);
-	box-shadow: 4px 4px 0 lightgrey;
+	box-shadow: 4px 4px 0 rgb(0, 0, 0, 0.2);
 
 	position: relative;
 
 	transition: 0.2s;
+	white-space: nowrap;
 }
 
 .button1::after {
 	content: "";
 
-	width: 0.5rem;
-	height: 0.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
 	display: inline-block;
 	position: absolute;
 
 	top: 38%;
 	right: 5%;
 
-	border-bottom: 3.5px solid black;
-	border-right: 3.5px solid black;
+	border-bottom: 5px solid black;
+	border-right: 5px solid black;
 	border-radius: 2px;
 	transform: rotate(-45deg);
 }
@@ -135,6 +167,7 @@ html, * {
 	margin-top: 4px;
 	margin-left: 4px;
 }
+
 /* --- */
 
 /* --- */
