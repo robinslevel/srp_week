@@ -7,6 +7,7 @@ html, * {
 
 body {
 	overflow: hidden;
+	background-color: lightgreen;
 }
 
 /* color variables */
@@ -29,9 +30,11 @@ body {
 
 .container {
 	background-color: var(--primary-dark-blue);
-	width: 100vw;
-	height: 100vh;
+	width: 414px;
+	height: 736px;
 	overflow: hidden;
+	margin: 3rem auto 0 auto;
+	position: relative;
 }
 
 .container p {
@@ -45,13 +48,18 @@ body {
 	color: white;
 	font-size: 2rem;
 	height: 10rem;
+	width: 100%;
 	padding: 1rem;
+	position: absolute;
 }
 
 
 .visualcontainer {
-	height: 20rem;
+	height: 100%;
+	width: 100%;
 	font-size: 1.2rem;
+	overflow: hidden;
+	position: relative;
 }
 
 .white,
@@ -60,7 +68,7 @@ body {
 .lblue,
 .blue {
 	height: 23rem;
-	width: 100%;
+	width: 414px;
 	border-radius: 1rem 1rem 0 0;
 
 	position: absolute;
@@ -115,6 +123,10 @@ body {
 	justify-content: center;
 	animation-delay: 0.2s !important;
 	text-decoration: none;
+	position: absolute;
+	bottom: 21%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .homepagebuttonAnim {
@@ -173,28 +185,34 @@ body {
 /* --- */
 
 .containerTodo {
-	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	background-color: var(--primary-dark-blue);
+	width: 414px;
+	height: 736px;
 	overflow: hidden;
+	margin: 3rem auto 0 auto;
+	position: relative;
 }
 
 .content {
 	background-color: white;
-	height: 100%;
-	border-radius: 1rem 1rem 0 0;
+    height: 85%;
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem;
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
 
-	padding: 1rem;
-	/* margin-top: -1rem; */
 	animation: contentLoad 0.7s forwards ease-in-out;
 }
 
 @keyframes contentLoad {
-	0% {margin-top: 40rem;}
-	70% {margin-top: 0rem;}
-	85% {margin-top: 0.8rem;}
-	100% {margin-top: 0rem;}
+	0% {bottom: -85%;}
+	70% {bottom: 0;}
+	85% {bottom: -2%;}
+	100% {bottom: 0;}
 }
 
 .content > h2 {
@@ -239,7 +257,7 @@ body {
 }
 
 .addNew {
-	position: fixed;
+	position: absolute;
 	align-self: center;
 	bottom: -80px;
 	padding: 1.5rem;
@@ -251,6 +269,7 @@ body {
 
 	animation: addNewLoad 0.8s forwards ease-in-out;
 	animation-delay: 0.8s;
+	z-index: 6;
 }
 
 @keyframes addNewLoad {
