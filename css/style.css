@@ -26,6 +26,8 @@ body {
 
 /* --- */
 
+
+
 /* homescreen */
 
 .container {
@@ -184,6 +186,9 @@ body {
 
 /* --- */
 
+
+/* todo lists */
+
 .containerTodo {
 	display: flex;
 	flex-direction: column;
@@ -312,6 +317,11 @@ body {
 	font-size: 1.2rem;
 }
 
+/* --- */
+
+
+
+
 /* templatelist */
 
 .contentTemplate {
@@ -355,6 +365,24 @@ body {
 
 	margin-right: 1rem;
 	display: block;
+}
+
+.cDone {
+	background-image: url(../images/finished.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	width: 1.5rem;
+	height: 1.5rem;
+
+	margin-right: 1rem;
+	display: block;
+}
+
+.tStrike {
+	text-decoration: line-through;
+	color: darkgrey;
+	margin: 0 !important;
 }
 
 .itemTemplate {
