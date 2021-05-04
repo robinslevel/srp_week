@@ -201,17 +201,17 @@ body {
 	margin: 1rem 0 0 1rem;
 }
 
-.content > ul {
+.lijst {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	list-style: none;
 }
 
-.content > ul > li {
+.item {
 	background-color: white;
 	width: 90%;
-	margin: 1rem;
+	margin: 1rem auto 1rem auto;
 	padding: 0.7rem 0 0.7rem 2rem;
 
 	border: 2px solid var(--primary-dark-blue);
@@ -224,7 +224,7 @@ body {
 	justify-content: space-between;
 }
 
-.content > ul > li::after {
+.item::after {
 	content: "";
 	background-image: url(../images/3dots.svg);
 	background-size: contain;
@@ -236,6 +236,11 @@ body {
 	height: 1.5rem;
 
 	margin-right: 1rem;
+}
+
+.content a {
+	text-decoration: none;
+	color: var(--primary-dark-blue);
 }
 
 .addNew {
@@ -286,4 +291,233 @@ body {
 	transform: translate(-50%, -50%);
 
 	font-size: 1.2rem;
+}
+
+/* templatelist */
+
+.headerTemplate {
+	color: white;
+	margin: 1rem 1rem 1rem 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.backBtn {
+	background-image: url(../images/arrow-white.svg);
+	background-size: contain;
+
+	width: 1.5rem;
+	height: 1.5rem;
+	display: block;
+
+	margin-bottom: 3rem;
+}
+
+.circle {
+	background-image: url(../images/unfinished.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	width: 1.5rem;
+	height: 1.5rem;
+
+	margin-right: 1rem;
+	display: block;
+}
+
+.itemTemplate {
+	background-color: white;
+	width: 90%;
+	margin: 1rem auto 1rem auto;
+	padding: 0.7rem 0 0.7rem 1rem;
+
+	border: 2px solid var(--primary-dark-blue);
+	border-radius: 12px;
+	box-shadow: 4px 4px 0 lightgray;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.itemTemplate > div {
+	display: flex;
+}
+
+.text {
+	margin: 0 !important;
+}
+
+.delete {
+	background-image: url(../images/trash.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	width: 2rem;
+	height: 2rem;
+	display: inline-block;
+}
+
+.itemTemplateSub {
+	background-color: white;
+	width: 90%;
+	margin: 1rem auto 1rem auto;
+	padding: 0.7rem 0 0.7rem 1rem;
+
+	border: 2px solid var(--primary-dark-blue);
+	border-radius: 12px;
+	box-shadow: 4px 4px 0 lightgray;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.subName {
+	display: flex;
+	justify-content: space-between;
+}
+
+.subName > div {
+	display: flex;
+}
+
+.tags {
+	display: flex;
+}
+
+.tagRed {
+	background-color: var(--accent);
+	color: white;
+	border-radius: 6px;
+	padding: 0.2rem;
+	font-size: 14px;
+	margin: 0 0.5rem 0 0 !important;
+}
+
+.tagBlue {
+	background-color: var(--primary-dark-blue);
+	color: white;
+	border-radius: 6px;
+	padding: 0.2rem;
+	font-size: 14px;
+	margin: 0 0.5rem 0 0 !important;
+}
+
+.note {
+	list-style: none;
+	display: flex;
+	margin: 0.7rem 0 0 0 !important;
+	align-items: center;
+}
+
+.scircle {
+	background-image: url(../images/unfinished.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	width: 1rem;
+	height: 1rem;
+	display: inline-block;
+}
+
+.stext {
+	margin: 0 0 0 0.5rem !important;
+}
+
+.addnote {
+	list-style: none;
+	display: flex;
+	margin: 0.7rem 0 0 0;
+	align-items: center;
+}
+
+.addnote > input {
+	appearance: none;
+	border: none;
+	color: lightgray;
+	font-size: 16px;
+}
+
+.addicon {
+	background-image: url(../images/add-item.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: block;
+
+	width: 1rem;
+	height: 1rem;
+
+	margin-right: 0.5rem;
+}
+
+
+.groceriesDetails {
+	display: none;
+	height: 100vh;
+	width: 100vw;
+	background-color: var(--primary-dark-blue);
+	position: absolute;
+	top: 0;
+}
+
+.hidden {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
+
+.headerTemplateDetails {
+	color: white;
+	margin: 1rem 1rem 1rem 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.backBtnDetails {
+	background-image: url(../images/arrow-white.svg);
+	background-size: contain;
+
+	width: 1.5rem;
+	height: 1.5rem;
+	display: block;
+
+	margin-bottom: 1rem;
+}
+
+.addNewDetails {
+	position: relative;
+	align-self: center;
+	padding: 1.5rem;
+	width: 90%;
+	margin: 0 auto 4rem auto;
+
+	border-radius: 12px;
+	border: 2px solid var(--primary-dark-blue);
+	box-shadow: 4px 4px 0 lightgray;
+}
+
+.addNewInputDetails {
+    appearance: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
+    background-color: transparent;
+    padding-left: 4rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+}
+
+.taskTitle {
+	margin-left: 1rem;
+	margin-bottom: 1rem;
+}
+
+.taskTitle > h1 {
+	margin-bottom: 1rem;
 }
