@@ -42,41 +42,62 @@ if (groceriesTrigger != null) {
     containerTemplate.classList.add("hidden");
   });
 }
-//back button template list
+//back button template list line 54 breekt de code maar doet het wel 
+//var backBtn = document.querySelector('span');
+//backBtn.addEventListener("click", function () {
+//  document.location.href = 'todolists.html';
+//})
 
-let backBtn = document.querySelector('span');
-
-backBtn.addEventListener('click', () => {
-  window.history.back();
-});
 
 // selectors
-const todoinput = document.querySelector('.input');
-//niet zeker of ik de <i> juist heb ingesteld
-const todobutton = document.querySelector(".icon_add");
-const todolist = document.querySelector('.lijst');
+var input = document.querySelector('.addNewInput');
+var mainTodoContainer = document.querySelector('.content');
+var addingButton = document.querySelector('.icon_add')
 //event listeners
-todobutton.addEventListener('click', addToDo);
-//functions
-function addToDo(event) {
-  //prevent form from submitting
-  event.preventDefault();
-  //test
-  console.log("hello");
-  //todo DIV
-  const todoDiv = documentcreateElement("div");
-  todoDiv.classList.add("todo");
-  //create li
-  const newTodo = document.createElement('li');
-  newTodo.innerText = 'hey';
-  newTodo.classList.add('item')
-  todoDiv.appendChild(newTodo);
-  //option button
-  const optionbutton = documentcreateElement('i');
-  optionbutton.innerHTML = '<i class="menu"></i>'
-  optionbutton.classList.add(".menu");
-  todoDiv.appendChild(optionbutton);
-  //append to list
-  todolist.appendChild(todoDiv);
-}
+
+addingButton.addEventListener('click', function (e) {
+  //create elements
+
+  if (input.value.trim()) {
+    //ul tag
+    var ultag = document.createElement('ul');
+    ultag.classList.add('lijst');
+
+    //div tag
+    var containerDiv = document.createElement('div');
+    containerDiv.classList.add('todo');
+
+    //li tag
+    var litag = document.createElement('li');
+    litag.innerHTML = input.value;
+    litag.classList.add('item');
+
+    //add button
+    var addingButton = document.createElement('button');
+    addingButton.classList.add('icon_add');
+    addingButton.innerHTML = '<i class="icon_add"></i>'
+
+    //edit button 2
+    var menuButton = document.createElement('i');
+    menuButton.classList.add('menu');
+
+    //combiningen
+
+    containerDiv.appendChild(litag);
+    containerDiv.appendChild(menuButton);
+
+    //voeg toe aan main div
+    mainTodoContainer.appendChild(litag);
+    // to test: console.log(ultag);
+    input.value = '';
+    //menu button working
+    menuButton.addEventListener('click', function (e) {
+      menuButton[i].addEventListener("click, function ()")
+    })
+  }
+})
+
+//template list page
+
+
 
