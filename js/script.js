@@ -42,3 +42,41 @@ if (groceriesTrigger != null) {
     containerTemplate.classList.add("hidden");
   });
 }
+//back button template list
+
+let backBtn = document.querySelector('span');
+
+backBtn.addEventListener('click', () => {
+  window.history.back();
+});
+
+// selectors
+const todoinput = document.querySelector('.input');
+//niet zeker of ik de <i> juist heb ingesteld
+const todobutton = document.querySelector(".icon_add");
+const todolist = document.querySelector('.lijst');
+//event listeners
+todobutton.addEventListener('click', addToDo);
+//functions
+function addToDo(event) {
+  //prevent form from submitting
+  event.preventDefault();
+  //test
+  console.log("hello");
+  //todo DIV
+  const todoDiv = documentcreateElement("div");
+  todoDiv.classList.add("todo");
+  //create li
+  const newTodo = document.createElement('li');
+  newTodo.innerText = 'hey';
+  newTodo.classList.add('item')
+  todoDiv.appendChild(newTodo);
+  //option button
+  const optionbutton = documentcreateElement('i');
+  optionbutton.innerHTML = '<i class="menu"></i>'
+  optionbutton.classList.add(".menu");
+  todoDiv.appendChild(optionbutton);
+  //append to list
+  todolist.appendChild(todoDiv);
+}
+
