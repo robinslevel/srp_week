@@ -28,7 +28,7 @@ function redirectHomescreen() {
 }
 //  bron redirect: https://www.encodedna.com/javascript/redirect-page-after-a-delay-using-javascript.htm
 
-const groceriesTrigger = document.querySelector(".itemTemplateSub");
+const groceriesTrigger = document.querySelector(".subName > div > .text");
 const groceriesDetails = document.querySelector(".groceriesDetails");
 
 const containerTemplate = document.querySelector(".container");
@@ -43,77 +43,15 @@ if (groceriesTrigger != null) {
   });
 }
 
+
+
+
 // add list item
-
-// const input = document.getElementById("inputNewTask");
-// const list = document.getElementById("lijstTemplate");
-
-// console.log(list)
-
-// document.addEventListener("keyup", function(event){
-//   if(event.keyCode == 13){
-//     const toDo = input.nodeValue;
-//     if(toDo){
-//       addToDo(toDo,id, false, false);
-
-//       LIST.push(
-//         {
-//           name: toDo,
-//           id: id,
-//           done: false,
-//           trash: false
-//         }
-//       )
-
-//       input.value = "";
-//       id++;
-//     }
-//   }
-// })
-
-// const check = "cDone";
-// const uncheck = "circle"
-// const lineThrough = "tStrike"
-
-// function addToDo(toDo, id, done ) {
-
-//   if(trash) { return; }
-
-//   const DONE = done ? check : uncheck;
-//   const LINE = done ? lineThrough : "";
-
-//   const text = `  <li class="itemTemplate" job="complete" id="${id}">
-//                     <div>
-//                         <i class="${DONE}"></i>
-//                         <p class="${LINE}">${toDo}</p>
-//                     </div>
-//                     <i class="delete" job="delete" id="${id}"></i>
-//                 </li>`;
-
-//   const position = "beforeend";
-
-//   list.insertAdjacentHTML(position, text);
-// }
-
-// function completeToDo(element){
-//   element.classList.toggle(check);
-//   element.classList.toggle(uncheck);
-//   element.parentNode.querySelector(".text".classList.toggle(lineThrough));
-//   list[element.id].done = list[element.id].done ? false : true;
-// }
-
-// function removeToDo(element){
-//   element.parentNode.parentNode.removeChild(element.parentNode)
-//   list[element.id].trash = true;
-// }
-
-
-// addToDo("Drink Coffee")
-
-
 
 const input = document.getElementById("inputNewTask");
 const list = document.getElementById("lijstTemplate");
+
+console.log(input)
 
 const CHECK = "cDone"
 const UNCHECK = "circle"
@@ -144,7 +82,7 @@ function addToDo(toDo, id, done, trash){
   if(trash){return;}
 
   const DONE = done ? CHECK : UNCHECK;
-  const LINE = done ? LINE_THROUGH: "";
+  const LINE = done ? LINE_THROUGH: "text";
 
   const item = `  <li class="itemTemplate">
                       <div>
@@ -160,9 +98,11 @@ function addToDo(toDo, id, done, trash){
 
 }
 
-document.addEventListener("keyup", function(event){
-  if(event.keyCode == 13){
-    const toDo = input.nodeValue;
+document.addEventListener("keypress", function(event){
+ 
+  if(13 == event.keyCode){
+
+    const toDo = input.value;
 
     if(toDo){
       addToDo(toDo, id, false, false);
