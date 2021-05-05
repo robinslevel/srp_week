@@ -56,6 +56,7 @@ console.log(input)
 const CHECK = "cDone"
 const UNCHECK = "circle"
 const LINE_THROUGH = "tStrike"
+const FILLED = "filled"
 
 let LIST, id;
 
@@ -123,6 +124,7 @@ function completeToDo(element){
   element.classList.toggle(CHECK);
   element.classList.toggle(UNCHECK);
   element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
+  element.parentNode.parentNode.classList.toggle(FILLED)
 
   LIST[element.id].done = LIST[element.id].done ? false : true;
 }

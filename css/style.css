@@ -377,12 +377,38 @@ body {
 
 	margin-right: 1rem;
 	display: block;
+	animation: cDone 0.5s forwards ease-in-out;
+}
+
+@keyframes cDone {
+	from{transform: rotate(-150deg);}
+	to {transform: rotate(0deg);}
 }
 
 .tStrike {
-	text-decoration: line-through;
-	color: darkgrey;
+	/* text-decoration: line-through; */
 	margin: 0 !important;
+	position: relative;
+}
+
+.tStrike::after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 1px;
+
+	background-color: black;
+
+	animation: strike 0.5s forwards ease-in-out;
+}
+
+@keyframes strike {
+	0% {width: 0;}
+	60% {width: 100%;}
+	80% {width: 90%;}
+	100% {width: 100%;}
 }
 
 .itemTemplate {
@@ -482,6 +508,11 @@ body {
 
 .stext {
 	margin: 0 0 0 0.5rem !important;
+}
+
+.filled {
+	background-color: var(--secondary-light-blue) !important;
+	transition: 0.2s;
 }
 
 .addnote {
