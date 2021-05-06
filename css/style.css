@@ -245,6 +245,7 @@ body {
 
 	display: flex;
 	justify-content: space-between;
+	cursor: pointer;
 }
 
 .item::after {
