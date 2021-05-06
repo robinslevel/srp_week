@@ -28,12 +28,10 @@ function redirectHomescreen() {
 }
 //  bron redirect: https://www.encodedna.com/javascript/redirect-page-after-a-delay-using-javascript.htm
 
-const groceriesTrigger = document.querySelector(".itemTemplateSub");
+const groceriesTrigger = document.querySelector(".subName > div > .text");
 const groceriesDetails = document.querySelector(".groceriesDetails");
 
 const containerTemplate = document.querySelector(".container");
-
-console.log(groceriesDetails);
 
 if (groceriesTrigger != null) {
   groceriesTrigger.addEventListener("click", function () {
@@ -42,6 +40,9 @@ if (groceriesTrigger != null) {
     containerTemplate.classList.add("hidden");
   });
 }
+
+//code van Robin
+
 //back button template list line 54 breekt de code maar doet het wel 
 //var backBtn = document.querySelector('span');
 //backBtn.addEventListener("click", function () {
@@ -49,14 +50,27 @@ if (groceriesTrigger != null) {
 //})
 
 
+if (window.location.pathname=='/todolists.html') {
+
 // selectors
-var input = document.querySelector('.addNewInput');
+// var input = document.querySelector('.addNewInput');
 var mainTodoContainer = document.querySelector('.content');
 var addingButton = document.querySelector('.icon_add')
 //event listeners
 
-addingButton.addEventListener('click', function (e) {
-  //create elements
+addingButton.addEventListener('click', function () {
+  addNewBtn()
+})
+
+document.addEventListener("keypress", function(event){
+  if(13 == event.keyCode){
+
+    addNewBtn()
+
+  }
+})
+
+function addNewBtn(e) {
 
   if (input.value.trim()) {
     //ul tag
@@ -94,10 +108,19 @@ addingButton.addEventListener('click', function (e) {
     menuButton.addEventListener('click', function (e) {
       menuButton[i].addEventListener("click, function ()")
     })
+    const addedItem = document.querySelector(".content > .item")
+
+    addedItem.addEventListener("click", function(){
+      window.location.href = "templatelist-blank.html"
+    })
   }
-})
+}
 
 //template list page
+
+
+}
+
 
 
 
