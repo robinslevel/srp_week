@@ -42,3 +42,35 @@ if (groceriesTrigger != null) {
     containerTemplate.classList.add("hidden");
   });
 }
+
+// zero state popups
+
+let popUp1 = document.querySelector(".popUp1");
+let popUp2 = document.querySelector(".popUp2")
+const popUp1Exit = document.querySelector(".popUp1Exit");
+const popUp2Exit = document.querySelector(".popUp2Exit");
+
+if ((popUp1 =! null)) {
+  setTimeout(popUp1Vis, 3000);
+
+  function popUp1Vis() {
+    console.log(popUp1)
+    popUp1.classList.add("visible");
+
+    popUp1Exit.addEventListener("click", function () {
+      popUp1.classList.remove("visible");
+    });
+  }
+}
+
+if ((popUp2 = !null)) {
+  setTimeout(popUp2Vis, 3000);
+
+  function popUp2Vis() {
+    popUp2.classList.add("visible");
+
+    popUp2Exit.addEventListener("click", function () {
+      popUp2.classList.remove("visible");
+    });
+  }
+}
