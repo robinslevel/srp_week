@@ -41,7 +41,43 @@ if (groceriesTrigger != null) {
   });
 }
 
-//code van Robin
+// zero state popups
+
+const popUp1 = document.querySelector(".popUp1");
+const popUp2 = document.querySelector(".popUp2")
+const popUp1Exit = document.querySelector(".popUp1Exit");
+const popUp2Exit = document.querySelector(".popUp2Exit");
+
+//check if on correct html page
+if (window.location.pathname=='/todolists.html') {
+  //run function after 3 seconds
+  setTimeout(popUp1Vis, 3000);
+
+  function popUp1Vis() {
+    console.log(popUp1)
+    popUp1.classList.add("visible");
+
+    // remove popup when "x" is clicked
+    popUp1Exit.addEventListener("click", function () {
+      popUp1.classList.remove("visible");
+    });
+  }
+}
+
+//check if on correct html page
+if (window.location.pathname=='/templatelist.html') {
+    //run function after 3 seconds
+  setTimeout(popUp2Vis, 3000);
+
+  function popUp2Vis() {
+    popUp2.classList.add("visible");
+
+    // remove popup when "x" is clicked
+    popUp2Exit.addEventListener("click", function () {
+      popUp2.classList.remove("visible");
+    });
+  }
+}
 
 //back button template list line 54 breekt de code maar doet het wel 
 //var backBtn = document.querySelector('span');
@@ -119,7 +155,55 @@ if (window.location.pathname == '/todolists.html') {
   //template list page
 
 
+})
+
+function addNewBtn(e) {
+
+  if (input.value.trim()) {
+    //ul tag
+    var ultag = document.createElement('ul');
+    ultag.classList.add('lijst');
+
+    //div tag
+    var containerDiv = document.createElement('div');
+    containerDiv.classList.add('todo');
+
+    //li tag
+    var litag = document.createElement('li');
+    litag.innerHTML = input.value;
+    litag.classList.add('item');
+
+    //add button
+    var addingButton = document.createElement('button');
+    addingButton.classList.add('icon_add');
+    addingButton.innerHTML = '<i class="icon_add"></i>'
+
+    //edit button 2
+    var menuButton = document.createElement('i');
+    menuButton.classList.add('menu');
+
+    //combiningen
+
+    containerDiv.appendChild(litag);
+    containerDiv.appendChild(menuButton);
+
+    //voeg toe aan main div
+    mainTodoContainer.appendChild(litag);
+    // to test: console.log(ultag);
+    input.value = '';
+    //menu button working
+    menuButton.addEventListener('click', function (e) {
+      menuButton[i].addEventListener("click, function ()")
+    })
+    const addedItem = document.querySelector(".content > .item")
+
+    addedItem.addEventListener("click", function(){
+      window.location.href = "templatelist-blank.html"
+    })
+  }
 }
+}
+
 
 
 

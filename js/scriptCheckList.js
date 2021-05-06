@@ -1,11 +1,9 @@
-//code van Sasja
-
-// add list item
+// code to add, check, uncheck and remove list items
 
 const input = document.getElementById("inputNewTask");
 const list = document.getElementById("lijstTemplate");
 
-
+//variables met classnames
 const CHECK = "cDone"
 const UNCHECK = "circle"
 const LINE_THROUGH = "tStrike"
@@ -13,24 +11,8 @@ const FILLED = "filled"
 
 let LIST, id;
 
-let data = localStorage.getItem("TODO");
 
-if(data){
-  LIST = JSON.parse(data);
-  id = LIST.length;
-  loadList(LIST);
-}else {
-  LIST = [];
-  id = 0;
-}
-
-function loadList(array){
-  array.forEach(function(item){
-      addToDo(item.name, item.id, item.done, item.trash);
-  });
-}
-
-
+// add item function
 function addToDo(toDo, id, done, trash){
   
   if(trash){return;}
@@ -52,6 +34,8 @@ function addToDo(toDo, id, done, trash){
 
 }
 
+
+// add list item when enter key is pressed
 document.addEventListener("keypress", function(event){
  
   if(13 == event.keyCode){
@@ -61,35 +45,34 @@ document.addEventListener("keypress", function(event){
     if(toDo){
       addToDo(toDo, id, false, false);
 
-      LIST.push({
-        name: toDo,
-        id: id,
-        done: false,
-        trash: false
-      });
-
       id++;
+      
+      //clear input after enter is pressed
+      input.value = ""
     }
   }
 })
 
+
+//complete list item
 function completeToDo(element){
   element.classList.toggle(CHECK);
   element.classList.toggle(UNCHECK);
   element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
   element.parentNode.parentNode.classList.toggle(FILLED)
-
-  LIST[element.id].done = LIST[element.id].done ? false : true;
 }
 
+
+// remove list item
 function removeToDo(element){
   element.parentNode.parentNode.removeChild(element.parentNode);
-
-  LIST[element.id].trash = true;
 }
 
+
+// target list items created dynamically
 list.addEventListener("click", function(event){
   const element = event.target;
+  // check if item clicked is complete or delete
   const elementJob = element.attributes.job.value;
 
   if(elementJob == "complete"){
@@ -98,3 +81,5 @@ list.addEventListener("click", function(event){
     removeToDo(element);
   }
 })
+
+//voor een groot deel van deze code is een bron gebruikt: https://www.youtube.com/watch?v=b8sUhU_eq3g&t=936s
