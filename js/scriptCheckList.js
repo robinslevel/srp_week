@@ -69,6 +69,8 @@ document.addEventListener("keypress", function(event){
       });
 
       id++;
+
+      input.value = ""
     }
   }
 })
