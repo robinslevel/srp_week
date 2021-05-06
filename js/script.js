@@ -45,12 +45,12 @@ if (groceriesTrigger != null) {
 
 // zero state popups
 
-let popUp1 = document.querySelector(".popUp1");
-let popUp2 = document.querySelector(".popUp2")
+const popUp1 = document.querySelector(".popUp1");
+const popUp2 = document.querySelector(".popUp2")
 const popUp1Exit = document.querySelector(".popUp1Exit");
 const popUp2Exit = document.querySelector(".popUp2Exit");
 
-if ((popUp1 =! null)) {
+if (window.location.pathname=='/todolists.html') {
   setTimeout(popUp1Vis, 3000);
 
   function popUp1Vis() {
@@ -63,7 +63,7 @@ if ((popUp1 =! null)) {
   }
 }
 
-if ((popUp2 = !null)) {
+if (window.location.pathname=='/templatelist.html') {
   setTimeout(popUp2Vis, 3000);
 
   function popUp2Vis() {
