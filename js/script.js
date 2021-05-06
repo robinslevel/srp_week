@@ -41,6 +41,38 @@ if (groceriesTrigger != null) {
   });
 }
 
+// zero state popups
+
+const popUp1 = document.querySelector(".popUp1");
+const popUp2 = document.querySelector(".popUp2")
+const popUp1Exit = document.querySelector(".popUp1Exit");
+const popUp2Exit = document.querySelector(".popUp2Exit");
+
+if (window.location.pathname=='/todolists.html') {
+  setTimeout(popUp1Vis, 3000);
+
+  function popUp1Vis() {
+    console.log(popUp1)
+    popUp1.classList.add("visible");
+
+    popUp1Exit.addEventListener("click", function () {
+      popUp1.classList.remove("visible");
+    });
+  }
+}
+
+if (window.location.pathname=='/templatelist.html') {
+  setTimeout(popUp2Vis, 3000);
+
+  function popUp2Vis() {
+    popUp2.classList.add("visible");
+
+    popUp2Exit.addEventListener("click", function () {
+      popUp2.classList.remove("visible");
+    });
+  }
+}
+
 //code van Robin
 
 //back button template list line 54 breekt de code maar doet het wel 
@@ -120,6 +152,7 @@ function addNewBtn(e) {
 
 
 }
+
 
 
 
