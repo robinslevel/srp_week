@@ -155,8 +155,6 @@ if (window.location.pathname == '/todolists.html') {
   //template list page
 
 
-})
-
 function addNewBtn(e) {
 
   if (input.value.trim()) {
