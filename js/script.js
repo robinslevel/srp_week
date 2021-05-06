@@ -48,32 +48,36 @@ const popUp2 = document.querySelector(".popUp2")
 const popUp1Exit = document.querySelector(".popUp1Exit");
 const popUp2Exit = document.querySelector(".popUp2Exit");
 
+//check if on correct html page
 if (window.location.pathname=='/todolists.html') {
+  //run function after 3 seconds
   setTimeout(popUp1Vis, 3000);
 
   function popUp1Vis() {
     console.log(popUp1)
     popUp1.classList.add("visible");
 
+    // remove popup when "x" is clicked
     popUp1Exit.addEventListener("click", function () {
       popUp1.classList.remove("visible");
     });
   }
 }
 
+//check if on correct html page
 if (window.location.pathname=='/templatelist.html') {
+    //run function after 3 seconds
   setTimeout(popUp2Vis, 3000);
 
   function popUp2Vis() {
     popUp2.classList.add("visible");
 
+    // remove popup when "x" is clicked
     popUp2Exit.addEventListener("click", function () {
       popUp2.classList.remove("visible");
     });
   }
 }
-
-//code van Robin
 
 //back button template list line 54 breekt de code maar doet het wel 
 //var backBtn = document.querySelector('span');
@@ -147,10 +151,6 @@ function addNewBtn(e) {
     })
   }
 }
-
-//template list page
-
-
 }
 
 
