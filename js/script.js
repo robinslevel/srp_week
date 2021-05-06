@@ -94,8 +94,16 @@ addingButton.addEventListener('click', function (e) {
     menuButton.addEventListener('click', function (e) {
       menuButton[i].addEventListener("click, function ()")
     })
+    const addedItem = document.querySelector(".content > .item")
+
+    addedItem.addEventListener("click", function(){
+      window.location.href = "templatelist-blank.html"
+    })
+
   }
 })
+
+
 
 //template list page
 
