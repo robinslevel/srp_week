@@ -2,81 +2,155 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
 </head>
 
 <body>
     <div class="container">
-        <div class="header">
+        <div class="headerTemplate">
+            <span class="backBtn"></span>
             <h1>Template list</h1>
         </div>
-        <div class="content">
-            <ul id="lijst">
-                <li class="item">
-                    <i class="circle"></i>
-                    <p class="text">Water plants</p>
-                    <i class="delete"></i>
-                </li>
-                <li class="item">
-                    <i class="circle"></i>
-                    <p class="text">Do groceries</p>
-                    <i class="delete"></i>
-                </li>
-                <li class="item">
-                    <i class="circle"></i>
-                    <p class="text">call mom</p>
-                    <i class="delete"></i>
-                    <ul id="tags">
-                        <li class="tgs">
-                            <p class="tag">
-                                important </p>
-                        </li>
-                        <li class="tags">
-                            <span class="customtag">custom tag here</span>
-                        </li>
-                        <div class="ul">
-                            <ul id="containerstags">
-                                <li class="note">
-                                    <i class="scircle"></i>
-                                    <p class="stext">Water plants</p>
-                                </li>
-                                <li class="note">
-                                    <i class="scircle"></i>
-                                    <p class="stext">Water plants</p>
-                                </li>
-                                <li class="note">
-                                    <i class="scircle"></i>
-                                    <p class="stext">Water plants</p>
-                                </li>
-                                <li class="addnote">
-                                    <i class="addicon"></i>
-                                    <input type="text" id="sinput" placeholder="Add subtask">
-                                </li>
-                              </ul>
-                        </div>
-                    </ul>
-                </li>
-            </ul>
-            <footer>
-                <div class="add-item">
-                    <i class="icon_add"></i>
-                    <input type="text" id="input" placeholder="add new task">
-                </div>
-            </footer>
-        </div>
+        <div class="contentTemplate">
+            <ul id="lijstTemplate">
 
+
+                <li class="itemTemplate">
+                    <div>
+                        <i class="circle" job="complete" id="0"></i>
+                        <p class="text">Water plants</p>
+                    </div>
+                    <i class="delete" job="delete" id="0"></i>
+                </li>
+
+                <li class="itemTemplateSub">
+                    <div class="subName">
+
+                        <div>
+                            <i class="circle" job="complete" id="0"></i>
+                            <p class="text">Do groceries</p>
+                        </div>
+
+                        <i class="delete" job="delete"></i>
+
+                    </div>
+
+
+                    <div class="tags">
+                        <p class="tagRed">important</p>
+                        <p class="tagBlue">Custom tag here</p>
+                    </div>
+
+                    <ul id="subTasks">
+
+                        <li class="note">
+                            <i class="scircle"></i>
+                            <p class="stext">Cheese</p>
+                        </li>
+
+                        <li class="note">
+                            <i class="scircle"></i>
+                            <p class="stext">Milk</p>
+                        </li>
+
+                        <li class="note">
+                            <i class="scircle"></i>
+                            <p class="stext">Butter</p>
+                        </li>
+
+                        <li class="addnote">
+                            <i class="addicon"></i>
+                            <input type="text" id="sinput" placeholder="Add subtask" />
+                        </li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
+            <footer>
+                <footer class="addNew">
+                    <i class="icon_add"></i>
+                    <input class="addNewInput" type="text" id="inputNewTask" placeholder="Add a new task" />
+                </footer>
+        </div>
     </div>
 
 
 
+
+    <div class="groceriesDetails">
+
+        <div class="headerTemplateDetails">
+            <span class="backBtnDetails"></span>
+            <h2>Template list</h2>
+        </div>
+
+
+
+        <div class="content">
+
+            <div class="taskTitle">
+                <h1>Do groceries</h1>
+                <div class="tags">
+                    <p class="tagRed">important</p>
+                    <p class="tagBlue">Custom tag here</p>
+                </div>
+
+            </div>
+
+
+            <div class="addNewDetails">
+                <i class="icon_add"></i>
+                <input class="addNewInputDetails" type="text" id="input" placeholder="Add tags" />
+            </div>
+
+            <h2>Subtasks</h2>
+            <ul id="lijst">
+                <li class="itemTemplate">
+                    <div>
+                        <i class="circle"></i>
+                        <p class="text">Cheese</p>
+                    </div>
+                    <i class="delete"></i>
+                </li>
+                <li class="itemTemplate">
+                    <div>
+                        <i class="circle"></i>
+                        <p class="text">Milk</p>
+                    </div>
+                    <i class="delete"></i>
+                </li>
+                <li class="itemTemplate">
+                    <div>
+                        <i class="circle"></i>
+                        <p class="text">Butter</p>
+                    </div>
+                    <i class="delete"></i>
+                </li>
+            </ul>
+
+
+            <div class="addNewDetails">
+                <i class="icon_add"></i>
+                <input class="addNewInputDetails" type="text" id="input" placeholder="Add subtask" />
+            </div>
+
+        </div>
+
+
+    </div>
+
     <script src="js/script.js"></script>
+    <script src="js/scriptCheckList.js"></script>
 </body>
 
 </html>

@@ -5,6 +5,11 @@ html, * {
 	font-family: 'Open Sans', sans-serif;
 }
 
+body {
+	overflow: hidden;
+	background-color: darkgrey;
+}
+
 /* color variables */
 
 /* om een kleur variable te selecteren doe je:
@@ -15,8 +20,601 @@ html, * {
 	--primary-red: #7b113a;
 	--primary-dark-blue: #150e56;
 	--secondary-blue: #1597bb;
-	--secondary-light-blue: #1597bb;
+	--secondary-light-blue: #8fd6e1;
 	--accent: #e41f6a;
 }
 
 /* --- */
+
+
+
+/* homescreen */
+
+.container {
+	background-color: var(--primary-dark-blue);
+	width: 414px;
+	height: 736px;
+	overflow: hidden;
+	margin: 3rem auto 0 auto;
+	position: relative;
+}
+
+.container p {
+	margin-left: 1rem;
+	margin-top: 1rem;
+
+}
+
+.header {
+	background-color: var(--primary-dark-blue);
+	color: white;
+	font-size: 2rem;
+	height: 10rem;
+	width: 100%;
+	padding: 1rem;
+	position: absolute;
+}
+
+
+.visualcontainer {
+	height: 100%;
+	width: 100%;
+	font-size: 1.2rem;
+	overflow: hidden;
+	position: relative;
+}
+
+.white,
+.dblue,
+.purple,
+.lblue,
+.blue {
+	height: 23rem;
+	width: 414px;
+	border-radius: 1rem 1rem 0 0;
+
+	position: absolute;
+}
+
+.white {
+	background-color: white;
+	bottom: 15rem;
+	animation-delay: 1.6s !important;
+}
+
+.dblue {
+	background-color: var(--primary-dark-blue);
+	color: white;
+	bottom: 12rem;
+	animation-delay: 1.4s !important;
+}
+
+.purple {
+	background-color: var(--primary-red);
+	color: white;
+	bottom: 8rem;
+	animation-delay: 1.2s !important;
+}
+
+.lblue {
+	background-color: var(--secondary-light-blue);
+	color: white;
+	bottom: 4rem;
+	animation-delay: 1s !important;
+}
+
+.blue {
+	background-color: var(--secondary-blue);
+	color: white;
+	bottom: 0rem;
+	animation-delay: 0.8s !important;
+}
+
+.homepageAnim {
+	animation: homepageAnim 1s forwards;
+}
+
+@keyframes homepageAnim {
+	to{bottom: -100%;}
+}
+
+/* start button */
+
+.homepagebuttoncontainer {
+	display: flex;
+	justify-content: center;
+	animation-delay: 0.2s !important;
+	text-decoration: none;
+	position: absolute;
+	bottom: 21%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.homepagebuttonAnim {
+	animation: homepagebuttonAnim 0.5s forwards ease-in-out;
+}
+
+@keyframes homepagebuttonAnim {
+	0% {margin-left: 0rem;}
+	30% {margin-left: -2rem;}
+	50% {margin-left: -2rem;}
+	100% {margin-left: 50rem;}
+}
+
+.button1 {
+	background-color: white;
+	font-weight: bold;
+	color: var(--primary-dark-blue);
+
+	padding: 2rem 15rem 2rem 2rem;
+	border-radius: 8px;
+	border: 2px solid var(--primary-dark-blue);
+	box-shadow: 4px 4px 0 rgb(0, 0, 0, 0.2);
+
+	position: relative;
+
+	transition: 0.2s;
+	white-space: nowrap;
+}
+
+.button1::after {
+	content: "";
+
+	width: 1.5rem;
+	height: 1.5rem;
+	display: inline-block;
+	position: absolute;
+
+	top: 38%;
+	right: 5%;
+
+	border-bottom: 5px solid black;
+	border-right: 5px solid black;
+	border-radius: 2px;
+	transform: rotate(-45deg);
+}
+
+.button1:hover {
+	background-color: lightgray;
+	box-shadow: 0px 0px transparent;
+	margin-top: 4px;
+	margin-left: 4px;
+}
+
+/* --- */
+
+/* --- */
+
+
+/* todo lists */
+
+.containerTodo {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--primary-dark-blue);
+	width: 414px;
+	height: 736px;
+	overflow: hidden;
+	margin: 3rem auto 0 auto;
+	position: relative;
+}
+
+.content {
+	background-color: white;
+    height: 85%;
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem;
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+
+	animation: contentLoad 0.7s forwards ease-in-out;
+}
+
+@keyframes contentLoad {
+	0% {bottom: -85%;}
+	70% {bottom: 0;}
+	85% {bottom: -2%;}
+	100% {bottom: 0;}
+}
+
+.content > h2 {
+	margin: 1rem 0 0 1rem;
+}
+
+.lijst {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	list-style: none;
+}
+
+.item {
+	background-color: white;
+	width: 90%;
+	margin: 1rem auto 1rem auto;
+	padding: 0.7rem 0 0.7rem 2rem;
+
+	border: 2px solid var(--primary-dark-blue);
+	border-radius: 12px;
+	box-shadow: 4px 4px 0 lightgray;
+
+	font-weight: bold;
+
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+.item::after {
+	content: "";
+	background-image: url(../images/3dots.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: inline-block;
+
+	width: 1rem;
+	height: 1.5rem;
+
+	margin-right: 1rem;
+}
+
+.content a {
+	text-decoration: none;
+	color: var(--primary-dark-blue);
+}
+
+.addNew {
+	position: absolute;
+	align-self: center;
+	bottom: -80px;
+	padding: 1.5rem;
+	width: 90%;
+	margin-bottom: 1rem;
+
+	border-radius: 12px;
+	border: 2px solid var(--primary-dark-blue);
+
+	animation: addNewLoad 0.8s forwards ease-in-out;
+	animation-delay: 0.8s;
+	z-index: 6;
+}
+
+@keyframes addNewLoad {
+	from {bottom: -80px;}
+	to {bottom: 0;}
+}
+
+.icon_add {
+	background-image: url(../images/add-item.svg);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: inline-block;
+	width: 1.5rem;
+	height: 1.5rem;
+	cursor: pointer;
+	z-index: 10;
+
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.addNewInput {
+	appearance: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 12px;
+	border: none;
+	background-color: transparent;
+	padding-left: 4rem;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	font-size: 1.2rem;
+}
+
+/* --- */
+
+
+
+
+/* templatelist */
+
+.contentTemplate {
+	background-color: white;
+    height: 80%;
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem;
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+
+	animation: contentLoad 0.7s forwards ease-in-out;
+}
+
+.headerTemplate {
+	color: white;
+	margin: 1rem 1rem 1rem 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.backBtn {
+	background-image: url(../images/arrow-white.svg);
+	background-size: contain;
+
+	width: 1.5rem;
+	height: 1.5rem;
+	display: block;
+
+	margin-bottom: 3rem;
+}
+
+.circle {
+	background-image: url(../images/unfinished.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	width: 1.5rem;
+	height: 1.5rem;
+
+	margin-right: 1rem;
+	display: block;
+}
+
+.cDone {
+	background-image: url(../images/finished.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	width: 1.5rem;
+	height: 1.5rem;
+
+	margin-right: 1rem;
+	display: block;
+	animation: cDone 0.5s forwards ease-in-out;
+}
+
+@keyframes cDone {
+	from{transform: rotate(-150deg);}
+	to {transform: rotate(0deg);}
+}
+
+.tStrike {
+	/* text-decoration: line-through; */
+	margin: 0 !important;
+	position: relative;
+}
+
+.tStrike::after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 1px;
+
+	background-color: black;
+
+	animation: strike 0.5s forwards ease-in-out;
+}
+
+@keyframes strike {
+	0% {width: 0;}
+	60% {width: 100%;}
+	80% {width: 90%;}
+	100% {width: 100%;}
+}
+
+.itemTemplate {
+	background-color: white;
+	width: 90%;
+	margin: 1rem auto 1rem auto;
+	padding: 0.7rem 0 0.7rem 1rem;
+
+	border: 2px solid var(--primary-dark-blue);
+	border-radius: 12px;
+	box-shadow: 4px 4px 0 lightgray;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.itemTemplate > div {
+	display: flex;
+}
+
+.text {
+	margin: 0 !important;
+}
+
+.delete {
+	background-image: url(../images/trash.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	width: 2rem;
+	height: 2rem;
+	display: inline-block;
+}
+
+.itemTemplateSub {
+	background-color: white;
+	width: 90%;
+	margin: 1rem auto 1rem auto;
+	padding: 0.7rem 0 0.7rem 1rem;
+
+	border: 2px solid var(--primary-dark-blue);
+	border-radius: 12px;
+	box-shadow: 4px 4px 0 lightgray;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.subName {
+	display: flex;
+	justify-content: space-between;
+}
+
+.subName > div {
+	display: flex;
+}
+
+.tags {
+	display: flex;
+}
+
+.tagRed {
+	background-color: var(--accent);
+	color: white;
+	border-radius: 6px;
+	padding: 0.2rem;
+	font-size: 14px;
+	margin: 0 0.5rem 0 0 !important;
+}
+
+.tagBlue {
+	background-color: var(--primary-dark-blue);
+	color: white;
+	border-radius: 6px;
+	padding: 0.2rem;
+	font-size: 14px;
+	margin: 0 0.5rem 0 0 !important;
+}
+
+.note {
+	list-style: none;
+	display: flex;
+	margin: 0.7rem 0 0 0 !important;
+	align-items: center;
+}
+
+.scircle {
+	background-image: url(../images/unfinished.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	width: 1rem;
+	height: 1rem;
+	display: inline-block;
+}
+
+.stext {
+	margin: 0 0 0 0.5rem !important;
+}
+
+.filled {
+	background-color: var(--secondary-light-blue) !important;
+	transition: 0.2s;
+}
+
+.addnote {
+	list-style: none;
+	display: flex;
+	margin: 0.7rem 0 0 0;
+	align-items: center;
+}
+
+.addnote > input {
+	appearance: none;
+	border: none;
+	color: lightgray;
+	font-size: 16px;
+}
+
+.addicon {
+	background-image: url(../images/add-item.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: block;
+	cursor: pointer;
+
+	width: 1rem;
+	height: 1rem;
+
+	margin-right: 0.5rem;
+}
+
+
+.groceriesDetails {
+	display: none;
+	height: 736px;
+	width: 414px;
+	background-color: var(--primary-dark-blue);
+    margin: 3rem auto 0 auto;
+	position: relative;
+	top: 0;
+	overflow: hidden;
+}
+
+.hidden {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
+
+.headerTemplateDetails {
+	color: white;
+	margin: 1rem 1rem 1rem 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.backBtnDetails {
+	background-image: url(../images/arrow-white.svg);
+	background-size: contain;
+
+	width: 1.5rem;
+	height: 1.5rem;
+	display: block;
+
+	margin-bottom: 1rem;
+}
+
+.addNewDetails {
+	position: relative;
+	align-self: center;
+	padding: 1.5rem;
+	width: 90%;
+	margin: 0 auto 4rem auto;
+
+	border-radius: 12px;
+	border: 2px solid var(--primary-dark-blue);
+	box-shadow: 4px 4px 0 lightgray;
+}
+
+.addNewInputDetails {
+    appearance: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
+    background-color: transparent;
+    padding-left: 4rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+}
+
+.taskTitle {
+	margin-left: 1rem;
+	margin-bottom: 1rem;
+}
+
+.taskTitle > h1 {
+	margin-bottom: 1rem;
+}

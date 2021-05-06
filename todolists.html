@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
-</head>
-<body>
-<div class="container">
-    <div class="header">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="containerTodo">
+      <div class="header">
         <h1>To do</h1>
-    </div>
-    <div class="content">
+      </div>
+      <div class="content">
+        <h2>My lists</h2>
         <ul id="lijst">
-<li class="item">
-    <p>template list</p>
-    <i class="menu"></i>
-</li>
-<li class="item">
-    <p>shopping list</p>
-    <i class="menu"></i>
-</li>
+          <div class="todo">
+          <li class="item">
+            <a href="templatelist.html">template list</a>
+            <i class="menu"></i>
+          </li>
+        </div>
+        <div class="todo">
+          <li class="item">
+            <p>shopping list</p>
+            <i class="menu"></i>
+          </li>
+        </div>
         </ul>
-    </div>
-</div>
-<footer>
-    <div class="voeg-toe">
+      </div>
+      <footer class="addNew">
         <i class="icon_add"></i>
-        <input type="text" id="input" placeholder="Add a new list">
+        <input class="addNewInput" type="text" id="input" placeholder="Add a new list" />
+      </footer>
     </div>
-</footer>
+
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
