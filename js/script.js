@@ -28,12 +28,10 @@ function redirectHomescreen() {
 }
 //  bron redirect: https://www.encodedna.com/javascript/redirect-page-after-a-delay-using-javascript.htm
 
-const groceriesTrigger = document.querySelector(".itemTemplateSub");
+const groceriesTrigger = document.querySelector(".subName > div > .text");
 const groceriesDetails = document.querySelector(".groceriesDetails");
 
 const containerTemplate = document.querySelector(".container");
-
-console.log(groceriesDetails);
 
 if (groceriesTrigger != null) {
   groceriesTrigger.addEventListener("click", function () {
@@ -74,3 +72,88 @@ if (window.location.pathname=='/templatelist.html') {
     });
   }
 }
+
+//code van Robin
+
+//back button template list line 54 breekt de code maar doet het wel 
+//var backBtn = document.querySelector('span');
+//backBtn.addEventListener("click", function () {
+//  document.location.href = 'todolists.html';
+//})
+
+
+if (window.location.pathname=='/todolists.html') {
+
+// selectors
+// var input = document.querySelector('.addNewInput');
+var mainTodoContainer = document.querySelector('.content');
+var addingButton = document.querySelector('.icon_add')
+//event listeners
+
+addingButton.addEventListener('click', function () {
+  addNewBtn()
+})
+
+document.addEventListener("keypress", function(event){
+  if(13 == event.keyCode){
+
+    addNewBtn()
+
+  }
+})
+
+function addNewBtn(e) {
+
+  if (input.value.trim()) {
+    //ul tag
+    var ultag = document.createElement('ul');
+    ultag.classList.add('lijst');
+
+    //div tag
+    var containerDiv = document.createElement('div');
+    containerDiv.classList.add('todo');
+
+    //li tag
+    var litag = document.createElement('li');
+    litag.innerHTML = input.value;
+    litag.classList.add('item');
+
+    //add button
+    var addingButton = document.createElement('button');
+    addingButton.classList.add('icon_add');
+    addingButton.innerHTML = '<i class="icon_add"></i>'
+
+    //edit button 2
+    var menuButton = document.createElement('i');
+    menuButton.classList.add('menu');
+
+    //combiningen
+
+    containerDiv.appendChild(litag);
+    containerDiv.appendChild(menuButton);
+
+    //voeg toe aan main div
+    mainTodoContainer.appendChild(litag);
+    // to test: console.log(ultag);
+    input.value = '';
+    //menu button working
+    menuButton.addEventListener('click', function (e) {
+      menuButton[i].addEventListener("click, function ()")
+    })
+    const addedItem = document.querySelector(".content > .item")
+
+    addedItem.addEventListener("click", function(){
+      window.location.href = "templatelist-blank.html"
+    })
+  }
+}
+
+//template list page
+
+
+}
+
+
+
+
+
