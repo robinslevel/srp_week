@@ -1,11 +1,11 @@
 # srp_week
-##todo-app
+## todo-app
 
 ## Team: 
 Sasja Koning
 Robin Korkor
 
-##Our goal:
+## Our goal:
 Todo-app
 
 ## Debrief:
