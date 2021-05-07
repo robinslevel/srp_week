@@ -511,6 +511,10 @@ body {
 	display: inline-block;
 }
 
+.delete:hover {
+	background-image: url(../images/trash-red.svg);
+}
+
 .itemTemplateSub {
 	background-color: white;
 	width: 90%;

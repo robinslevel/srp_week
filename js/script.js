@@ -152,8 +152,6 @@ if (window.location.pathname == '/todolists.html') {
     }
   }
 
-  //template list page
-
 
 function addNewBtn(e) {
 
@@ -201,6 +199,8 @@ function addNewBtn(e) {
   }
 }
 }
+
+// bron add todo list: https://www.youtube.com/watch?v=ZHITga0AAK4
 
 
 
