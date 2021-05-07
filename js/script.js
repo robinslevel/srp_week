@@ -155,7 +155,7 @@ if (window.location.pathname == '/todolists.html') {
   //template list page
 
 
-})
+}
 
 function addNewBtn(e) {
 
@@ -202,7 +202,7 @@ function addNewBtn(e) {
     })
   }
 }
-}
+
 
 
 
