@@ -43,13 +43,19 @@ if (groceriesTrigger != null) {
 
 // zero state popups
 
+var sPath = window.location.pathname;
+var sPage = sPath.substring(sPath.lastIndexOf("/") + 1);
+
+console.log(sPath, sPage)
+
+
 const popUp1 = document.querySelector(".popUp1");
 const popUp2 = document.querySelector(".popUp2")
 const popUp1Exit = document.querySelector(".popUp1Exit");
 const popUp2Exit = document.querySelector(".popUp2Exit");
 
 //check if on correct html page
-if (window.location.pathname=='/todolists.html') {
+if (sPage == "todolists.html") {
   //run function after 3 seconds
   setTimeout(popUp1Vis, 3000);
 
@@ -64,8 +70,10 @@ if (window.location.pathname=='/todolists.html') {
   }
 }
 
+let headerTemplate = document.querySelector(".headerTemplate")
+
 //check if on correct html page
-if (window.location.pathname=='/templatelist.html') {
+if (sPage == "templatelist.html") {
     //run function after 3 seconds
   setTimeout(popUp2Vis, 3000);
 
@@ -86,7 +94,7 @@ if (window.location.pathname=='/templatelist.html') {
 //})
 
 
-if (window.location.pathname == '/todolists.html') {
+if (sPage == "todolists.html") {
 
   // selectors
   // var input = document.querySelector('.addNewInput');
